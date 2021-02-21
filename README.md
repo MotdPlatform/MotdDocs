@@ -38,5 +38,6 @@ t | String | 目标 | auth
 ip | String | 服务器地址 | 192.168.168.111
 port | String | 服务器端口 | 19132
 data | Json | 需要存储的数据 | \[{"test":100, "name":"joy"},{"test1":"havefun!"}\]
+interface | String | 中转双向返回的通讯接口,只能在Init(Create)时保存,后将无法更改(Beta) | http(s)://127.0.0.1:2333/router/
 
 返回`data`: 检索到的服务器相关信息
