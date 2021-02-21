@@ -34,6 +34,7 @@ data | Object | 请求数据
 
 参数 | 类型 | 备注 | 示例
  --- | --- | --- | ---
+t | String | 目标 | auth
 ip | String | 服务器地址 | 192.168.168.111
 port | String | 服务器端口 | 19132
 data | Json | 需要存储的数据 | \[{"test":100, "name":"joy"},{"test1":"havefun!"}\]
