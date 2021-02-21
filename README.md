@@ -6,14 +6,11 @@
 接口地址：`https://motd.52craft.cc/api/`
 请求方式：`GET/POST`
 
+返回参数:
 
-返回`status`
-
-状态码 | 备注
---- | ---
-200 | 请求成功
-400 | 请求参数出错
-403 | 请求参数出错(-3)
-404 | 请求的对象没有目标
-405 | 请求数据重复(Beta)
-... | ...
+参数 | 类型 | 备注
+ --- | --- | --- 
+status | Number | 将严格按照(HTTP STATUS)[https://github.com/MotdPlatform/ClientAPI_Doc/blob/main/HTTP_STATUS.md]规则
+msg | String | 附加信息
+client| Object | 客户端信息
+data | Object | 请求数据
