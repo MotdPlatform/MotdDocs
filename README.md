@@ -10,7 +10,7 @@
 
 参数 | 类型 | 备注
  --- | --- | --- 
-status | Number | 将严格按照(HTTP STATUS)[https://github.com/MotdPlatform/ClientAPI_Doc/blob/main/HTTP_STATUS.md]规则
+status | Number | 将严格按照[HTTP STATUS](https://github.com/MotdPlatform/ClientAPI_Doc/blob/main/HTTP_STATUS.md)规则
 msg | String | 附加信息
 client| Object | 客户端信息
 data | Object | 请求数据
