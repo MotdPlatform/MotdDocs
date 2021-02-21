@@ -2,6 +2,8 @@
 通讯接口文档
 因为团队Github Page收费，所以就写这儿了
 
+[相关客户端需求](https://github.com/MotdPlatform/ClientAPI_Doc/blob/main/CILENT_REQUIRE.md)
+
 
 接口地址：`https://motd.52craft.cc/api/`
 请求方式：`GET/POST`
