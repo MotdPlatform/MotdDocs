@@ -2,7 +2,7 @@
 通讯接口文档
 因为团队Github Page收费，所以就写这儿了
 
-[相关客户端需求](https://github.com/MotdPlatform/ClientAPI_Doc/blob/main/CILENT_REQUIRE.md)
+[相关客户端需求](https://github.com/MotdPlatform/ClientAPI_Doc/blob/main/Client_Requirements.md)
 
 接口地址：`https://motd.52craft.cc/api/`
 请求方式：`GET/POST`
@@ -11,7 +11,7 @@
 
 参数 | 类型 | 备注
  --- | --- | --- 
-status | Number | 将严格按照[HTTP_STATUS](https://github.com/MotdPlatform/ClientAPI_Doc/blob/main/HTTP_STATUS.md)规则
+status | Number | 将严格按照[HTTP_STATUS](https://github.com/MotdPlatform/ClientAPI_Doc/blob/main/HTTPStatus.md)规则
 msg | String | 附加信息
 client| Object | 客户端信息
 data | String | 请求数据`Token`
