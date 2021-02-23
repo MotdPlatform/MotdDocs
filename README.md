@@ -74,7 +74,7 @@ PHP方法
 ```php
   static function doCrypt($string, $key, $operation = false)
   {
-      $key = md5(date("Ymd") . $key);
+      $key = md5(date("YmdH") . $key);
       $iv = substr($key, 0, 16);
       $key = substr($key, 16);
       if ($operation) return openssl_decrypt(base64_decode($string), "AES-128-CBC", $key, OPENSSL_RAW_DATA, $iv);
