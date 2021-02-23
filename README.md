@@ -11,7 +11,7 @@
 
 参数 | 类型 | 备注
  --- | --- | --- 
-status | Number | 将严格按照[HTTP STATUS](https://github.com/MotdPlatform/ClientAPI_Doc/blob/main/HTTP_STATUS.md)规则
+status | Number | 将严格按照[HTTP_STATUS](https://github.com/MotdPlatform/ClientAPI_Doc/blob/main/HTTP_STATUS.md)规则
 msg | String | 附加信息
 client| Object | 客户端信息
 data | String | 请求数据`Token`
@@ -42,25 +42,24 @@ data | String | 请求数据`Token`
 JavaScript方法：
 
 ```js
-doCrypt: function (string, key, operation) {
+  doCrypt: function (string, key, operation) {
     let d = new Date(),
       dMonth = (d.getMonth() + 1).toString(),
       dDate = d.getDate().toString(),
-      dHour = (d.getHours() + 1).toString(),
-      dKey = d.getFullYear().toString() + ((dMonth.length == 2) ? dMonth : 0 + dMonth).toString() + ((dDate.length == 2) ? d.getDate() : 0 + dDate).toString() + ((dHour.length == 2) ? d.getDate() : 0 + dHour).toString();
+      dHour = d.getHours().toString(),
+      dKey = d.getFullYear().toString() + ((dMonth.length == 2) ? dMonth : 0 + dMonth).toString() + ((dDate.length == 2) ? dDate : 0 + dDate).toString() + ((dHour.length == 2) ? dHour : 0 + dHour).toString();
 
     key = CryptoJS.MD5(dKey + key.toString()).toString();
     let iv = CryptoJS.enc.Utf8.parse(key.substring(0, 16));
-
     key = CryptoJS.enc.Utf8.parse(key.substring(16));
-    string = JSON.stringify(string);
+
     if (operation) {
       return CryptoJS.AES.decrypt(string, key, {
         iv: iv,
         padding: CryptoJS.pad.Pkcs7
       }).toString(CryptoJS.enc.Utf8);
     }
-    return CryptoJS.AES.encrypt(string, key, {
+    return CryptoJS.AES.encrypt(JSON.stringify(string), key, {
       iv: iv,
       mode: CryptoJS.mode.CBC,
       padding: CryptoJS.pad.Pkcs7
@@ -71,13 +70,13 @@ doCrypt: function (string, key, operation) {
 PHP方法
 
 ```php
-static function doCrypt($string, $key, $operation = false)
-    {
-        $key = md5(date("Ymd") . $key);
-        $iv = substr($key, 0, 16);
-        $key = substr($key, 16);
-        if ($operation) return openssl_decrypt(base64_decode($string), "AES-128-CBC", $key, OPENSSL_RAW_DATA, $iv);
-        return base64_encode(openssl_encrypt($string, "AES-128-CBC", $key, OPENSSL_RAW_DATA, $iv));
+  static function doCrypt($string, $key, $operation = false)
+  {
+      $key = md5(date("Ymd") . $key);
+      $iv = substr($key, 0, 16);
+      $key = substr($key, 16);
+      if ($operation) return openssl_decrypt(base64_decode($string), "AES-128-CBC", $key, OPENSSL_RAW_DATA, $iv);
+      return base64_encode(openssl_encrypt($string, "AES-128-CBC", $key, OPENSSL_RAW_DATA, $iv));
     }
 ```
 
