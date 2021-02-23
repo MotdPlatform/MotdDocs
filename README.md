@@ -37,6 +37,8 @@ data | String | 请求数据`Token`
 
 可以看到携带了`token`，并只携带了`token`
 
+就是将本来要发送的参数全部一JSON的格式压缩为一个`token`
+
 ### 如何得到`token`
 
 JavaScript方法：
