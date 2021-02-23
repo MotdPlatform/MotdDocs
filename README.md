@@ -14,18 +14,18 @@
 status | Number | 将严格按照[HTTP STATUS](https://github.com/MotdPlatform/ClientAPI_Doc/blob/main/HTTP_STATUS.md)规则
 msg | String | 附加信息
 client| Object | 客户端信息
-data | Object | 请求数据
+data | String | 请求数据`Token`
 
 示例:
 ```json
 {
   "status":400,
-  "msg":"requested params error!",
+  "msg":"参数错误",
   "client":{
     "ip":"123.158.111.51",
     "ua":"Mozilla\/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit\/537.36 (KHTML, like Gecko) Chrome\/88.0.4324.182 Safari\/537.36"
   },
-  "data":[]
+  "data":null
 }
 ```
 
@@ -93,15 +93,51 @@ static function doCrypt($string, $key, $operation = false)
 
 ```json
 client: {ip: "123.158.110.205",…}
-addr: "浙江省嘉兴市"
-ip: "123.158.110.205"
-ua: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36"
-data: "ByGXIaidMHBJWaRPMK0PKOwaSuvXgJdc/rCrKxa7ivex+B5cHfKUJ8BzufMlWlNxsrAEPMgJ3l8TfTtk8xGoEadW3bWXsLcanBUlQ/Mj3Ki7FhW95z6QaV8MtsZKqIoemh3ZqzWhRutsYPPq7iDIIWQhuRjBTU8WVSd5VybI7hGAQu01ONDNBRlft0xCdtc6mR4E9sNPLEuGGH9+NXNwZyWASEabtbakiM1/mEUPjC7A5AFSY9tmpyMWZbcAFww338Y/F2Z7eiXMrogQgG8g1EsRxtazVAcpmTd2U1ihzJmMoEYR5ma8MFp0vFZzpra+fW7rJYeqIUx5LflKKkRuVhFWKSxlYUAIMEX8hz7eRPMwA1LzxdSIdsFSuOdVgwoUqbUyZCVfFE0rXXapV0bknnsr+ggHweGWK4wPqvXMGeKNK0R+EIgIahjLziupCbPjINzGg2TaJqnPLnKSKW4pYAUH4Idm/LoMOnBKzRHK8I0sehfxZ6aJ1MWMdJsTwvXI00lhCacosf1gOOuKcUqiEmGAXcXG0sdW742OMvQPMwqNxpJrKrbwzUl7NMnIydmSoT8CPpWgY251wA1TrJal+Ygylsz7Y1+Vwr4FdJJvOL5ydiie+LOuEmwb5GIES1UGVNV+KUV0XxJXWkYB4sCdQUq+k8t92qECB+PnPOoIP4oklG/Fr4KuwaVkoilsVFRXCZ5LpPXWSDQ0aEB6YU73tQqqmROLfEUMi0R5o0kavuXVk63pxqrN+KIPxjw79LaMzMLcmTMP14+sPG23LcYIUWaAb9y6u4E5gI2aujDMW8LrwEQfHBNzn9uhZxJTvzJdbc5DUoyXaeoMXfvBUCxQVK+0hQGfubkhfF7/EHcHLnVZFlVDzkfkZWXvpvuali8Nr3m5FJqlxOSuuzo2qmVqZUk+QXbutwMcRbXoxl3ChNL3j1JuUA3NjYVefh6r2s0GkCIHQ+wYULjTQpNkKxYPod67wEhT56UiY8zZB42jhkYTNzJstbalWERfBk+6iEf0gYnnz7YvOQGU+x6gpKYzTqQEVLvOoHve/r/MdoNOH05Fu8RzdVcHMbk+auAkRs/vsZ3VLFuS4zOBwwUfpyEzahj3jKX9rS4fSQbW74CFaJXWs0nx5Kof38RjVN8hxhfrHGBhpLNCoSrQ5aY8bNhPeonTq70DroYnvwPWk4XDbUmLoTHB7CuNlDmdz3N5BUxqusCOeNU2yH5tLY6SiVt4pkUzXeQmvn0MbBBbtcYuTZUH2oIMpcyy5e7eXlC8Ng5x593IjUtBkZCunzxBhvNTtfahr+t1Nrbb5OVnDcSYYvBFUE0PtlFt0OGqp6jib471MtVJKR7azkHdzuNZHJNjf6RtR4mkNHNUIxRAUgaMEK5pJv4w8Akhn1A4xMnLkmwr3aLdhv6ZNTTxeqL5Ms5ds1F5CC3Q3NL8qkr8GcsUV/NTudKtY3QS94+YT9iQ3Zxi7gbGFviTirIgIUmmMwoh5JUIAjZn7vQYaP4l+x2VrKMVFF6JVgJIOvbKwJfseIt5VSa/GhTbyBW5DuWRpdb7nb9ZN7uVtQq0nbarUxuMRMTDWMC8VbkcTvcwYPObfHFd1/etdr791B1sND8cbJR9PYCp8mftXyHFgI+poOYVhobrhWebImBij0cHqdUn8fe+o0DMwbuvzyGgF/HV5w4ZnBN6pSvd6KWXalbsUHxMSk/WK77dycH6TmiEXURn2TGQtZACqde54EmYruT+0LLr5b/mNpssXuC1W2PyxF9EahG86Yhj8xPfew8vx/brxxKeg2VBh5/5Vn8QmOzXDC+4XA5yaozh3tUUvS/RXDcMKrRk9ioL2NTcJUD0qEjOR9UwqRGG5vUN8yIWku31gKyz0z8GKT/qcX38W/t2Lx+GN21u9G676MrQv+6VBVeV9Rm+oG84JS0HYAxmvJw2Xtm3c3pX8hzDUcELOpFDAqCtSrk="
+data: "AV36iChBELJbngHIT5SsTtE8TC5WszpA0bPkaYEFv6YsCgQJw+9iliha37BOVku5zd4BxnVXVlPHR8Prnek6XKXonwo/BFTajSyBEYrBsDvi5bWTpFwR13HWdjpHKu6fLBnwMn+yf+fmnuGCUnP2ixxuQNjtuA81AAovkYsyl4Ym0b8mblbPh20qlQ7d+l3IhErLxi3B7PB4IebhottbT/JSjyBnemnBCL3lceIRcDmqEQPKHWUhDcZfy2S2XfaSl/iwnoci4yfsvTl9TljShsC8fZKNfEYiiyfpgIElReS/ouY1NJHmg6M5+TwZ/o9oRUAPtmVY8dPBWLyD2O5kJwN9LiPmV3gy17EKyH0RKwPMfGxwiRwNLa+QOeykBoucYO/k6QwDGOQ6DfVySqrsgjKLEEEkgnfuxmJLKI7H7/SA+Q2ht22dWtAWq/dKjOCW9k/BZS3r9UktxDFxzkaWCpsgBOzS8JFIEfrJE3QLbO+3arOaYKxEs0yLaJW4xyJhkdm72fxXCcAkugTE5Wio7gCcDtTGpzJk8maV/IG2ymi1Q1a6OMwOBaj6IDcz72C/2zWvKqkt4omksM4xigtsmlxdKqFFsvUBtRRult9BZZI0Ls8XWPlKd38nHqdo9ltBZMUEjTR/TZlNMbWGsUS5rKhmYtVtcBATJJSDR4nl3JrqxJJ6SOaCR8qVNSs56uw71Um5CuoMQgW6kWgqIfvFacz/bwq3aTyxK/UgjOOxtENuLQuwN455GnGBbldod6SgNHT6Szpl8B/l6qqVTkUFL3OqvkWL8fDXri/DXU82/sPs6I+9Cfh69OgY36MLEzr9gbaRUKsj8/hFlUr9PAhNFY4kitfpBzFQLv8jV0qKRqkO8kC+/I8ZLR4zgoWZoXnDEJNWg+yvcq98gTpk+NEdq8Hfb+z6PLDVm6f94/8Ht68tsKHnRJ2aZBGuMWn8UeYxZ6rgVYwUs4YKDAFD6jhybkqjn3lrL55OjrUwvoNEkQPehMT+n0hf6rMg4DpRFe/2POqi37YrCFxyqRVUQeztiP1vxbD1gpsV82IyOSaym/TlhwaNI7NXVFufb7TLEY97JstbRupJnDcNmWz5gXOHwiIY9ZhOrP1NuOxHPgTqoGEBdsUq7RJNQ+Y9VRHGwfXp5dmNGze1JJZozjZZ+pSTeXLGhBpY3SICO/bfvxF+Yga5naIZFco7fAI2HJRj87iNUpIgGuVXud35Y7+iLnO4qEr0y80UaKpDwsmhpgn9fG89QWdgkkf+v3a8Pb4M7E3uVVn8kII1OPfTR78ildIUpQTqCa1nAkj4O0sgtMnAlipMmfsImdON/flJxWli/JiSAk49L4C3ub88tSNBXDSEpHk9U1uYn31LkFKUJhdYHcZcnPSLXhkj5A6iY8KPAwtc5F0REC0sGAYnpRaJOPfmIjP4tJBo4v0kKAbgegXGRa0wSlSnb6N+HnnL5UJJKB+rcXD5VCb90jl8iKIk6X91SrJK+sVEbduGIG8fVlGuTVlFLiFzn4qTmareXcSJ8I/pmQF1oS7IN1iU+ihkQVgjUw=="
 msg: "提示请求成功"
 status: 200
 ```
 
 只需要用解密方法，拿取信息即可。
+
+将此`data`解密为：
+
+```json
+[
+  {
+    "tid": 1,
+    "content": "要让服务器排名更靠前，需要实时维护服务器状态。"
+  },
+  {
+    "tid": 2,
+    "content": "低延迟的服务器排名更容易上升。"
+  },
+  {
+    "tid": 3,
+    "content": "平台不提供游戏伺服，只是对伺服进行数据处理。"
+  },
+  {
+    "tid": 4,
+    "content": "感谢您来到MOTD，使用工具栏查询服务器就可以排队上传哦。"
+  },
+  {
+    "tid": 5,
+    "content": "你对你的服务器很有信心吗？那就来看看吧"
+  },
+  {
+    "tid": 6,
+    "content": "时间不代表一切，平台保证了高质量的检测和记录。"
+  },
+  {
+    "tid": 7,
+    "content": "你是否能在这儿鳌头独占？"
+  },
+  {
+    "tid": 8,
+    "content": "您的每一次请求都将被记录，请勿进行非法请求！"
+  }
+]
+```
 
 
 ## 更新服务器的客户端缓存（SQL）
