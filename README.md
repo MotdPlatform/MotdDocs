@@ -80,7 +80,7 @@ PHP方法
     }
 ```
 
-(JAVA??)[https://blog.csdn.net/weixin_34297300/article/details/88849565]
+[JAVA??](https://blog.csdn.net/weixin_34297300/article/details/88849565)
 
 使用测试秘钥`69dcff60ade65ebb803b1b56ba6a3874`，该秘钥在测试阶段将不会变更，请保留（添加）更改方法。
 
