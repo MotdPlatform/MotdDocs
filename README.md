@@ -152,9 +152,13 @@ static function doCrypt($string, $key, $operation = false)
 # 复现请求全过程
 
 1.请求地址（接口）为https://motd.52craft.cc/api/
+
 2.请求方式可以是`GET`/`POST`
+
 3.根据[客户端接口](https://github.com/MotdPlatform/MotdDocs/blob/main/Client_API.md)请求更新服务器缓存
+
 4.已知要传送参数`d` `ip` `port` `data` `interface`四个参数
+
 5.将他们变为`JSON`格式，具体参照[Json传递数据两种方式](https://www.cnblogs.com/dand/p/10031854.html)，最后他们变成了：
 
 ```json
@@ -168,6 +172,7 @@ static function doCrypt($string, $key, $operation = false)
 ```
 
 6.将以上内容`mcrypt`加密为`PDEKSL+juUCyMduVpanC/nECAP5YZcDHuDzBgwCwoelbrQsYwoSIRkMgj6SWLWZbp7e2Yoi14xRQeF3SYfOWoKKsja4HDrsombGKBRPnlcsuhOBQy/Nx8CJW1d91oFgw`
+
 7.将该字段作为`token`传递：
 
 > https://motd.52craft.cc/api/?token=PDEKSL+juUCyMduVpanC/nECAP5YZcDHuDzBgwCwoelbrQsYwoSIRkMgj6SWLWZbp7e2Yoi14xRQeF3SYfOWoKKsja4HDrsombGKBRPnlcsuhOBQy/Nx8CJW1d91oFgw
