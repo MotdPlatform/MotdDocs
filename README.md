@@ -186,7 +186,7 @@ static function doCrypt($string, $key, $operation = false)
 ```json
 {
   "client": {
-    "ip": "123.158.110.205"
+    "ip": "123.158.110.205",
     "ua": "xxxxx",
     "addr": "xxxxxx"
   },
