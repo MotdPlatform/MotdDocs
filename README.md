@@ -58,7 +58,7 @@ doCrypt: function (string, key, operation) {
 
   key = CryptoJS.MD5(dKey + key.toString()).toString();
   let iv = CryptoJS.enc.Utf8.parse(key.substring(0, 16));
-  key = CryptoJS.enc.Utf8.parse(key.substring(16));
+  key = CryptoJS.enc.Utf8.parse(key.substring(0, 16));
     
   if (operation) {
     return CryptoJS.AES.decrypt(string, key, {
@@ -82,7 +82,7 @@ static function doCrypt($string, $key, $operation = false)
   date_default_timezone_set('Asia/Shanghai');
   $key = md5(date("YmdH") . $key);
   $iv = substr($key, 0, 16);
-  $key = substr($key, 16);
+  $key = substr($key, 0, 16);
 
   $method = "AES-128-CBC";
   $options = OPENSSL_RAW_DATA;
