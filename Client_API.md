@@ -9,7 +9,8 @@
 t | String | 目标 | auth
 ip | String | 服务器地址 | 192.168.168.111
 port | String | 服务器端口 | 19132
-data | Json | 需要存储的数据 | \[{"test":100, "name":"joy"},{"test1":"havefun!"}\]
+data | Json | 需要存储的数据 | {"players":\[\], "plugins":\[\]}
+timestamp | Number | 请求时的时间戳（s）
 interface | String | 中转双向返回的通讯接口，只能在Create(第一次请求)时保存，后将无法更改，服务器将通过该接口发送相关数据（题目，算法）进行动态转调（测试中），或者从中获得服务器的相关数据（插件列表，在线玩家uuid，等） | http(s)://127.0.0.1:2333/router/
 
 返回`data`: 检索到的服务器相关信息
