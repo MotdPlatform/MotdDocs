@@ -17,3 +17,17 @@ interface | String | 中转双向返回的通讯接口，只能在Create(第一�
 
 返回`data`: 检索到的服务器相关信息
 带\*的参数传入时将覆盖原来的内容，没必要参数可以不传。
+
+
+## 发送邮件
+
+请求参数：
+
+参数 | 类型 | 备注 | 示例
+ --- | --- | --- | ---
+ t | String | 目标 | mail
+ to | String | 发送的目标邮箱 | ikers@foxmail.com
+ subject | String | 标题 | 你的服务器负载过高
+ content | String | 详细内容 | 你的服务器负载高达xxx，时间：xxx，...
+ 
+ 无`data`返回。
