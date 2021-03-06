@@ -9,7 +9,7 @@
 \*t | String | 目标 | auth
 \*ip | String | 服务器地址 | 192.168.168.111
 \*port | String | 服务器端口 | 19132
-\*data | Json | 需要存储的数据 | {"players":\[\], "plugins":\[\]}
+\*data | String | 需要存储的数据 | {"players":\[\], "plugins":\[\]}
 \*timestamp | Number | 请求时的时间戳（s）
 email | String | 配置文件下的邮箱（空则不进行邮件服务）
 
