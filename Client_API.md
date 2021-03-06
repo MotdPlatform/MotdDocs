@@ -10,8 +10,8 @@
 \*ip | String | 服务器地址 | 192.168.168.111
 \*port | String | 服务器端口 | 19132
 \*data | String | 需要存储的数据 | {"players":\[\], "plugins":\[\]}
-\*timestamp | Number | 请求时的时间戳（s）
-email | String | 配置文件下的邮箱（空则不进行邮件服务）
+\*timestamp | Number | 请求时的时间戳（s） | 1615006264
+email | String | 配置文件下的邮箱（空则不进行邮件服务） | 
 
 interface | String | 中转双向返回的通讯接口，只能在Create(第一次请求)时保存，后将无法更改，服务器将通过该接口发送相关数据（题目，算法）进行动态转调（测试中），或者从中获得服务器的相关数据（插件列表，在线玩家uuid，等） | http(s)://127.0.0.1:2333/router/
 
