@@ -6,11 +6,12 @@
 
 参数 | 类型 | 备注 | 示例
  --- | --- | --- | ---
-\*t | String | 目标 | auth
+\*t | String | 目标 | auths
 \*ip | String | 服务器地址 | 192.168.168.111
 \*port | String | 服务器端口 | 19132
 \*data | String | 需要存储的数据 | {"players":\[\], "plugins":\[\]}
 \*timestamp | Number | 请求时的时间戳（s） | 1615006264
+key | String | 特殊鉴权的key，用于交互机器人 | xxxxxxxxxxxxxxxxx
 email | String | 配置文件下的邮箱（空则不进行邮件服务） | 
 \*name | String | 服务器的名称 (请使用Base64转码) | Nukkit 服务器
 \*tps | String | 服务器的TPS | 20.0
