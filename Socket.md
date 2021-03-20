@@ -22,7 +22,10 @@
 {
   "name": "PluginsKers9394",
   "uuid": "xxxxxx",
+  "group" 123456789,
   "msg": "这是在游戏内发送的一条信息",
   "key": "服务器的鉴权信息",
 }
 ```
+
+`group`是配置文件所设置的QQ群
